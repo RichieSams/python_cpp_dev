@@ -10,5 +10,7 @@ RUN apk add --no-cache \
     pip3 --disable-pip-version-check install setuptools
 
 COPY docker-entrypoint.sh /
+RUN chmod a+x /docker-entrypoint.sh
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["make"]
